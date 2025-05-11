@@ -1,0 +1,103 @@
+
+{% extends "layout.html" %}{% comment %} {% extends "layout.html" %}
+
+{% block title %}
+chai tweet
+{% endblock  %}
+
+{% block content %}
+<h1 class= "text-center  mt-4">welcome to chai's tweet</h1>
+<h2>
+  {%if form.instance.pk %}
+  Edit Tweet
+  {% else %}
+  Create tweet
+  {% endif %}
+  <form method="post" enctype="multipart/form-data" class="form">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="btn btn-warning" type="submit">Submit</button>
+  </form>
+  
+  <a href="{% url 'tweet_list' %}">Back to tweet list</a>
+  
+
+</h2>
+
+{% endblock  %} {% endcomment %}
+
+
+
+{% comment %} {% block title %}
+chai tweet
+{% endblock %}
+
+{% block content %}
+<h1 class="text-center mt-4">Welcome to Chai's Tweet</h1>
+
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-md-6"> <!-- Limit width to 6 columns on medium+ screens -->
+      <div class="card p-4 shadow-sm"> <!-- Optional card style for better UX -->
+        <h2 class="mb-3">
+          {% if form.instance.pk %}
+            Edit Tweet
+          {% else %}
+            Create Tweet
+          {% endif %}
+        </h2>
+        
+        <form method="post" enctype="multipart/form-data" class="form">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button class="btn btn-warning" type="submit">Submit</button>
+        </form>
+
+        <div class="mt-3">
+          <a href="{% url 'tweet_list' %}">← Back to tweet list</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+ {% endcomment %}
+ 
+
+{% block title %}
+chai tweet
+{% endblock %}
+
+{% block content %}
+<h1 class="text-center mt-4">Welcome to Chai's Tweet</h1>
+
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-md-8"> <!-- Wider column (was col-md-6) -->
+      <div class="card p-4 shadow-sm"> <!-- Card for styling -->
+        <h2 class="mb-3">
+          {% if form.instance.pk %}
+            Edit Tweet
+          {% else %}
+            Create Tweet
+          {% endif %}
+        </h2>
+        
+        <form method="post" enctype="multipart/form-data" class="form">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button class="btn btn-warning" type="submit">Submit</button>
+        </form>
+
+        <div class="mt-3">
+          <a href="{% url 'tweet_list' %}">← Back to tweet list</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+
